@@ -75,7 +75,7 @@ export class TimelineComponent implements OnInit {
           "titulo": "Processo concluído.",
           "tipoEvento": "conclusao",
           "avaliacao" : this.avaliacao,
-          "observacao": "obsConclusao"
+          "observacao": obsConclusao
             
       }
     )
