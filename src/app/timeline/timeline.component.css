@@ -1,0 +1,22 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.action{
+	margin-top: 50px;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.mat-tab-body-wrapper{
+	height: 500px !important;
+}

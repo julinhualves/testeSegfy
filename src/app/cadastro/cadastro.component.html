@@ -1,0 +1,111 @@
+<div class="mainHeader">
+  <div>
+    <h2>Sinistros -> Novo Sinistro</h2>
+  </div>
+</div>
+
+<div class="mainContent">
+
+
+  <mat-grid-list cols="2" >
+    
+    <mat-grid-tile>
+    
+      <div class="example-container">
+        <h3>Novo Cadastro</h3>
+         <mat-form-field>
+            <input matInput placeholder="Nome do Segurado" id="nomeSegurado">
+         </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nº da apólice" id="nApolice">
+         </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Tipo do Seguro:" id="tipoSeguro" (selectionChange)="changeTipoSeguro($event.value)">
+            <mat-option 
+            *ngFor="let option of tipoSeguro"
+            [value]="option.value">{{option.nome}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Seguradora" id="seguradora" (selectionChange)="changeSeguradora($event.value)">
+            <mat-option 
+            *ngFor="let option of seguradoras"
+            [value]="option.value">{{option.nome}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+          <button mat-raised-button color="secondary" class="btn default"
+            (click)="onClickAddSinistro()">
+            Cadastrar
+          </button>
+
+     </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <div style="width: 80%">
+        <h3>Importar dados da seguradora:</h3>
+        <mat-grid-list cols="3" rowHeight="100px">
+        
+          <mat-grid-tile>
+            <mat-card class="card" >
+                <mat-card-content>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuwi9zH_DWgUz0yqX11RbL2Sa1Taj3blWqwu6X6CeCkwCTBMs" class="imgLogo">
+                </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-card class="card" >
+                <mat-card-content>
+                  <img src="https://cotandoseguro.com/img/seguradoras/alfa-seguros.jpg" class="imgLogo">
+                </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-card class="card" >
+                <mat-card-content>
+                  <img src="http://www.novicci.com.br/cupons/wp-content/uploads/allianz-cupom-desconto.png" class="imgLogo">
+                </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-card class="card" >
+                <mat-card-content>
+                  <img src="http://aindabem.com.br/wp-content/uploads/2017/08//1501620891_image1-1080x675.jpeg" class="imgLogo">
+                  
+                </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-card class="card" >
+                <mat-card-content>
+                  <img src="data:image/png;base64,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" class="imgLogo">
+                  
+                </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-card class="card" >
+                <mat-card-content>
+                  [...]
+                </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

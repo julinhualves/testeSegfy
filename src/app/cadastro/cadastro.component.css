@@ -1,0 +1,14 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  
+  width: 300px;
+}
+
+.imgLogo{
+	width: 100%;
+    height: 100%;
+}

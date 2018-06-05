@@ -1,0 +1,132 @@
+
+
+<div class="mainHeader" *ngIf="!action">
+	<div>
+		<h2>Sinistros -> Timeline</h2>
+	</div>
+	<div>
+		<form class="example-form" style="right: 10px; position: absolute; top: 0px;">
+
+		  <mat-form-field class="example-full-width">
+		    <textarea matInput placeholder="filtar por nome, apólice, seguradora, etc"></textarea>
+		  </mat-form-field>
+		</form>
+	</div>
+</div>
+
+<div class="mainContent" *ngIf="!action">
+
+	<cotacao-component class="cotacao"
+		*ngFor="let cotacao of cotacoes; let i = index"
+		indexCotacao={{i}}
+		[cotacao] = cotacao
+	>
+	</cotacao-component>
+</div>
+
+
+<div class="action" *ngIf="action">
+
+	<mat-tab-group style="height: 500px; width: 600px;">
+
+  		<mat-tab label="Nova Ação" style="height: 500px;">
+
+  			<div style="height: 500px;">
+				<h4 class="default">Próxima Fase!</h4>
+				<p> Legal! o processo andou! Informe qual a próxima fase:</p>
+			
+				<form class="example-form">
+				  <mat-form-field class="example-full-width">
+				    <input matInput placeholder="Título próxima fase" id="nomeEvento" value="Nome da ação">
+				  </mat-form-field>
+
+				  <mat-form-field class="example-full-width">
+				    <textarea matInput placeholder="Observação:" id="obsEvento"></textarea>
+				  </mat-form-field>
+				</form>
+
+
+				<button  mat-raised-button color="accent" class="btn default"
+					(click)="onClickCancelar()">
+					Cancelar
+				</button>
+				
+				<button mat-raised-button color="primary" class="btn fourth" style="color: #fff" 
+					(click)="onClickAddEvento()">
+					Confirmar
+				</button>
+			</div>
+
+
+  		</mat-tab>
+
+  		<mat-tab label="Enviar Mensagem " style="height: 500px;">
+  			<div style="height: 500px;">	
+
+				<h4 class="default">Enviar Mensagem:</h4>
+				<form class="example-form">
+
+				<mat-form-field>
+				  <mat-select placeholder="Destinatário:" (selectionChange)="changeDestinatario($event.value)">
+				    <mat-option *ngFor="let destinatario of destinatarios" [value]="destinatario.value">
+				      {{ destinatario.viewValue }}
+				    </mat-option>
+				  </mat-select>
+			   </mat-form-field>
+
+				<mat-form-field class="example-full-width">
+				    <input matInput placeholder="Assunto:" id="nomeMensagem" value="titulo da mensagem">
+				  </mat-form-field>
+
+				  <mat-form-field class="example-full-width">
+				    <textarea matInput placeholder="Mensagem:" id="corpoMensagem"></textarea>
+				  </mat-form-field>
+				</form>
+
+				<button mat-raised-button color="accent"  class="btn default"
+					(click)="onClickCancelar()">
+					Cancelar	
+				</button>
+				
+				<button mat-raised-button color="primary" class="btn fourth" style="color: #fff"
+					(click)="onClickAddMensagem()">
+					Confirmar
+				</button>
+			</div>
+  		</mat-tab>
+
+  		<mat-tab label="Concluir Sinistro " style="height: 500px;">
+  			<div style="height: 500px;">	
+
+				<h4 class="default">Concluir Sinistro!</h4>
+				<form class="example-form">
+
+				<mat-form-field>
+				  <mat-select placeholder="Avaliação do Corretor" (selectionChange)="changeAvaliacao($event.value)">
+				    <mat-option *ngFor="let avaliacao of avaliacoes" [value]="avaliacao.value">
+				      {{ avaliacao.viewValue }}
+				    </mat-option>
+				  </mat-select>
+			   </mat-form-field>
+
+
+				  <mat-form-field class="example-full-width">
+				    <textarea matInput placeholder="Observação:" id="obsConclusao"></textarea>
+				  </mat-form-field>
+
+				</form>
+
+				<button mat-raised-button color="accent"  class="btn default"
+					(click)="onClickCancelar()">
+					Cancelar	
+				</button>
+				
+				<button mat-raised-button color="primary"  class="btn fourth" style="color: #fff"
+					(click)="onClickConcluir()">
+					Confirmar
+				</button>
+			</div>
+  		</mat-tab>
+	</mat-tab-group>
+
+</div>

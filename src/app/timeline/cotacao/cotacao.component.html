@@ -1,0 +1,25 @@
+<div class="cotacao">
+	
+
+	<apolice-component class="apolice"
+		[apolice] = cotacao.apolice
+		[indexCotacao] = indexCotacao
+		[nEventos] = cotacao.eventos.length	
+	>
+	</apolice-component>
+
+	
+
+	<evento-component class="evento"
+		
+		*ngFor="let evento of cotacao.eventos; let i = index"
+
+		[evento] = evento
+		[index] = i
+		[ultimo] = cotacao.eventos.length
+		[indexCotacao] = indexCotacao
+		>
+	</evento-component>
+
+</div>
+

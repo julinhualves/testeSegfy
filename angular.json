@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "testeSegfy2": {
+    "testeSegfy": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/testeSegfy2",
+            "outputPath": "dist/testeSegfy",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/teste-segfy.theme.scss"
             ],
             "scripts": []
           },
@@ -50,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "testeSegfy2:build"
+            "browserTarget": "testeSegfy:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testeSegfy2:build:production"
+              "browserTarget": "testeSegfy:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testeSegfy2:build"
+            "browserTarget": "testeSegfy:build"
           }
         },
         "test": {
@@ -95,7 +96,7 @@
         }
       }
     },
-    "testeSegfy2-e2e": {
+    "testeSegfy-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +104,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "testeSegfy2:serve"
+            "devServerTarget": "testeSegfy:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "testeSegfy2:serve:production"
+              "devServerTarget": "testeSegfy:serve:production"
             }
           }
         },
@@ -123,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "testeSegfy2"
+  "defaultProject": "testeSegfy"
 }

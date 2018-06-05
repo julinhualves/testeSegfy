@@ -1,0 +1,55 @@
+.evento{
+	width: 200px;
+	padding: 20px;
+}
+
+.acao{
+	/*	background-color: #E65431;*/
+	background-color: #FFBD91;
+}
+
+.mensagem{
+	background-color: #9DF2A3;
+}
+
+.timelineBack{
+	background-color: #96D6F2;
+}
+.headerText{
+	background-color: rgba(255,255,255,0.5);
+	float: left;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.contentText{
+	margin-top: 40px;
+}
+.contentIcon{
+	margin-top: 40px;
+	display: flex;	
+	align-items: center;
+	justify-content: center;
+}
+.estrelas{
+	display: flex;	
+	align-items: center;
+	justify-content: center;
+}
+.title{
+    left: 16px;
+    top: 16px;
+    position: absolute;
+    width: 180px;
+}
+.subtitle{
+	font-size: 12px;
+}
+
+/*segfy main #E65431*/
+/*segfy alt #5AB84D*/
+/*segfy gray #909090*/
+/*segfy blue #909090*/

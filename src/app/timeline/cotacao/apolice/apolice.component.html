@@ -1,0 +1,37 @@
+
+<mat-card class="apolice-card apolice" >
+  <mat-card-header>
+    <div mat-card-avatar>
+      <fa [name]="'car'" [size]="'2x'" *ngIf="apolice.tipoDoBem == 'carro'"></fa>
+      <fa [name]="'home'" [size]="'2x'"  *ngIf="apolice.tipoDoBem == 'casa'"></fa>
+      <fa [name]="'heartbeat'" [size]="'2x'"  *ngIf="apolice.tipoDoBem == 'vida'"></fa>
+
+    </div>
+    <mat-card-title>
+      <fa [name]="'user'"></fa>
+      {{apolice.nomeSegurado}}
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      <fa [name]="'building'"></fa>
+      {{apolice.nomeSeguradora}}
+    </mat-card-subtitle>
+
+  </mat-card-header>
+  
+  <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">-->
+
+  <mat-card-content>
+    <p>
+      Nº apólice: {{apolice.nApolice}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>ver + info</button>
+    <button mat-button
+    (click)="onClickAvancar()"
+    *ngIf="nEventos == 0 || nEventos == null">
+      Avançar!</button>
+  </mat-card-actions>
+
+</mat-card>
